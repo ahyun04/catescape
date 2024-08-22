@@ -10,13 +10,9 @@ public class GameDirector : MonoBehaviour
     public Text gameOverText;
     public Text timerText;
     
-    public Button restartButton;
-
-
     private void Start()
     {
         gameOverText.gameObject.SetActive(false);  
-        restartButton.gameObject.SetActive(false);
     }
 
     public void UpdateHpGauge(float fillAmount)
@@ -28,13 +24,11 @@ public class GameDirector : MonoBehaviour
         timerText.text = $"Time: {Mathf.Ceil(time)}";
     }
 
-    public void ShowGameOver(float score)
+    public void ShowGameOver()
     {
         gameOverText.gameObject.SetActive(true);
         gameOverText.text = "GAME OVER";
         Time.timeScale = 0f;
-
-        restartButton.gameObject.SetActive(true);
     }
 
     public void RestartGame()

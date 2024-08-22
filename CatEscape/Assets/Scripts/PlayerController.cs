@@ -75,13 +75,12 @@ public class PlayerController : MonoBehaviour
 
         if (this.hp <= 0)
         {
-            EndGame();
+            this.gameDirector.ShowGameOver();
         }
     }
 
     private void EndGame()
     {
         isGameOver = true;
-        //gameDirector.ShowGameOver(score);
     }
 }
